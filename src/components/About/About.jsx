@@ -1,4 +1,4 @@
-import UseMobileDetect from '../UseMobileDetect/UseMobileDetect.jsx';
+import UseMobileDetect from '../../hooks/UseMobileDetect.jsx';
 import AboutDesktop from "./AboutDesktop.jsx";
 import AboutMobile from "./AboutMobile.jsx";
 

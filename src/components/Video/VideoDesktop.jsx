@@ -1,9 +1,24 @@
-import vd from "../../picture/vd.jpg";
+import usePageConfig from "../../hooks/usePageConfig";
 
 function VideoDesktop() {
+    const config = usePageConfig();
+
+    const videoUrl = config?.video;
+
+    if (!videoUrl) return null;
+
+    const embedUrl = videoUrl.replace("youtu.be/", "www.youtube.com/embed/").split("?")[0];
+
     return (
         <section className="Video-Desktop">
-            <img src ={vd} alt="vd" />
+            <iframe
+                width="100%"
+                src={embedUrl}
+                title="Video Giới Thiệu"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+            ></iframe>
         </section>
     );
 }

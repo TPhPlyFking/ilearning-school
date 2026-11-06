@@ -32,6 +32,7 @@ function HeaderDesktop() {
                     <a href="goc"> Góc học viên </a>
                     <a href="gt"> Giới thiệu</a>
                     <a href="blog"> Blog</a>
+                    <span className="link-divider"></span>
                     <a href="log in">Log in</a>
                     <button> SIGN</button>
                 </nav>

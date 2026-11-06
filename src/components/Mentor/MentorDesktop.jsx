@@ -1,234 +1,37 @@
+import { Carousel } from "antd";
+import { useRef } from "react";
 
-import { useState } from "react";
+    const API_BASE_URL = "https://ai-project-api.moviehub.io.vn";
 
-function MentorDesktop() {
-    const [currentMentor, setCurrentMentor] = useState(0);
-    const [targetMentor, setTargetMentor] = useState(0);
-    const [direction, setDirection] = useState("next");
-    const [phase, setPhase] = useState("idle");
 
-    const goToMentor = (nextMentor, moveDirection) => {
-        if (phase === "sliding" || nextMentor === currentMentor) {
-            return;
-        }
+function MentorDesktop({ mentors = [], currentMentor, setCurrentMentor }) {
+    const totalMentors = mentors.length;
 
-        setDirection(moveDirection);
-        setTargetMentor(nextMentor);
-        setPhase("sliding");
-    };
+
+    const carouselRef = useRef(null);
 
     const handleNext = () => {
-        if (currentMentor < 2) {
-            goToMentor(currentMentor + 1, "next");
-        }
+        carouselRef.current?.next();
     };
 
     const handlePrev = () => {
-        if (currentMentor > 0) {
-            goToMentor(currentMentor - 1, "prev");
-        }
+        carouselRef.current?.prev();
     };
 
-    // cập nhật mentor sau khi thẻ mới truot vo
-    const handleAnimationEnd = (event) => {
-        if (
-            event.animationName.startsWith("mentorEnter") &&
-            phase === "sliding"
-        ) {
-            setCurrentMentor(targetMentor);
-            setPhase("idle");
-        }
+    const handleGoTo = (index) => {
+        carouselRef.current?.goTo(index);
     };
 
-    const renderMentorCard = (mentorIndex, role) => {
-        const transitionClass =
-            phase === "sliding"
-                ? `${role} slide-${direction}`
-                : "";
-
-        if (mentorIndex === 0) {
-            return (
-                <div
-                    key={`tam-${role}`}
-                    className={`mentor-card mentor-card-transition ${transitionClass}`}
-                    onAnimationEnd={handleAnimationEnd}
-                >
-                    <div className="mentor-image"></div>
-
-                    <div className="mentor-info">
-                        <span className="quote-icon">//</span>
-                        <p>
-                            Mình đến với ngành từ những năm 2007, đến nay có thể tạm cho là hơn 13 năm rồi.
-                            Với việc "chạy" dự án, mentor cho rất nhiều nơi, mình tin rằng có thể cung cấp cho
-                            các bạn một cách toàn vẹn về bức tranh tổng thể của ngành lập trình. Quan trọng
-                            nhất vẫn là xây dựng những chiếc app và hệ thống có hiệu năng cao, tạo được giá trị
-                            cho người dùng cũng như doanh nghiệp của bạn.
-                            <br /><br />
-                            Bên cạnh đó, là một Software / Solution Architect, mình tự tin có thể giúp bạn hiểu rõ
-                            việc xây dựng kiến trúc cho ứng dụng lớn, mang lại hiệu quả cao cho team.
-                        </p>
-                        <div className="mentor-profile">
-                            <h5>Tâm Huỳnh</h5>
-                            <h6>Founder & CEO</h6>
-                        </div>
-                    </div>
-
-                    <div className="dots-center">
-                        <span
-                            className={`dot ${currentMentor === 0 ? "active" : ""}`}
-                            onClick={() => goToMentor(0, 0 < currentMentor ? "prev" : "next")}
-                        ></span>
-                        <span
-                            className={`dot ${currentMentor === 1 ? "active" : ""}`}
-                            onClick={() => goToMentor(1, 1 < currentMentor ? "prev" : "next")}
-                        ></span>
-                        <span
-                            className={`dot ${currentMentor === 2 ? "active" : ""}`}
-                            onClick={() => goToMentor(2, 2 < currentMentor ? "prev" : "next")}
-                        ></span>
-                    </div>
-
-                    <div className="buttons-right">
-                        <button
-                            onClick={handlePrev}
-                            className={currentMentor === 0 ? "disabled" : ""}
-                            disabled={phase === "sliding" || currentMentor === 0}
-                        >
-                            &lt;
-                        </button>
-                        <button
-                            onClick={handleNext}
-                            className={currentMentor === 2 ? "disabled" : ""}
-                            disabled={phase === "sliding" || currentMentor === 2}
-                        >
-                            &gt;
-                        </button>
-                    </div>
-                </div>
-            );
-        }
-
-        if (mentorIndex === 1) {
-            return (
-                <div
-                    key={`hieu-${role}`}
-                    className={`mentor-card mentor-card-transition ${transitionClass}`}
-                    onAnimationEnd={handleAnimationEnd}
-                >
-                    <div className="mentor-image"></div>
-
-                    <div className="mentor-info">
-                        <span className="quote-icon">//</span>
-                        <p>
-                            Mình đến với ngành từ những năm 2007, đến nay có thể tạm cho là hơn 13 năm rồi.
-                            Với việc "chạy" dự án, mentor cho rất nhiều nơi, mình tin rằng có thể cung cấp cho
-                            các bạn một cách toàn vẹn về bức tranh tổng thể của ngành lập trình. Quan trọng
-                            nhất vẫn là xây dựng những chiếc app và hệ thống có hiệu năng cao, tạo được giá trị
-                            cho người dùng cũng như doanh nghiệp của bạn.
-                            <br /><br />
-                            Bên cạnh đó, là một Software / Solution Architect, mình tự tin có thể giúp bạn hiểu rõ
-                            việc xây dựng kiến trúc cho ứng dụng lớn, mang lại hiệu quả cao cho team.
-                        </p>
-                        <div className="mentor-profile">
-                            <h5>Hiếu Hồ</h5>
-                            <h6>Giảng viên Frontend</h6>
-                        </div>
-                    </div>
-
-                    <div className="dots-center">
-                        <span
-                            className={`dot ${currentMentor === 0 ? "active" : ""}`}
-                            onClick={() => goToMentor(0, 0 < currentMentor ? "prev" : "next")}
-                        ></span>
-                        <span
-                            className={`dot ${currentMentor === 1 ? "active" : ""}`}
-                            onClick={() => goToMentor(1, 1 < currentMentor ? "prev" : "next")}
-                        ></span>
-                        <span
-                            className={`dot ${currentMentor === 2 ? "active" : ""}`}
-                            onClick={() => goToMentor(2, 2 < currentMentor ? "prev" : "next")}
-                        ></span>
-                    </div>
-
-                    <div className="buttons-right">
-                        <button
-                            onClick={handlePrev}
-                            className={currentMentor === 0 ? "disabled" : ""}
-                            disabled={phase === "sliding" || currentMentor === 0}
-                        >
-                            &lt;
-                        </button>
-                        <button
-                            onClick={handleNext}
-                            className={currentMentor === 2 ? "disabled" : ""}
-                            disabled={phase === "sliding" || currentMentor === 2}
-                        >
-                            &gt;
-                        </button>
-                    </div>
-                </div>
-            );
-        }
-
+    if (totalMentors === 0) {
         return (
-            <div
-                key={`quan-${role}`}
-                className={`mentor-card mentor-card-transition ${transitionClass}`}
-                onAnimationEnd={handleAnimationEnd}
-            >
-                <div className="mentor-image"></div>
-
-                <div className="mentor-info">
-                    <span className="quote-icon">//</span>
-                    <p>
-                        Mình đến với ngành từ những năm 2007, đến nay có thể tạm cho là hơn 13 năm rồi.
-                        Với việc "chạy" dự án, mentor cho rất nhiều nơi, mình tin rằng có thể cung cấp cho
-                        các bạn một cách toàn vẹn về bức tranh tổng thể của ngành lập trình. Quan trọng
-                        nhất vẫn là xây dựng những chiếc app và hệ thống có hiệu năng cao, tạo được giá trị
-                        cho người dùng cũng như doanh nghiệp của bạn.
-                        <br /><br />
-                        Bên cạnh đó, là một Software / Solution Architect, mình tự tin có thể giúp bạn hiểu rõ
-                        việc xây dựng kiến trúc cho ứng dụng lớn, mang lại hiệu quả cao cho team.
-                    </p>
-                    <div className="mentor-profile">
-                        <h5>Quân Bùi</h5>
-                        <h6>Giảng viên IOS</h6>
-                    </div>
+            <section className="mentor-desktop">
+                <div className="mentor-heading">
+                    <h5>Nhân sự nòng cốt</h5>
+                    <h6>Đội ngũ giảng viên</h6>
                 </div>
-                <div className="dots-center">
-                    <span
-                        className={`dot ${currentMentor === 0 ? "active" : ""}`}
-                        onClick={() => goToMentor(0, 0 < currentMentor ? "prev" : "next")}
-                    ></span>
-                    <span
-                        className={`dot ${currentMentor === 1 ? "active" : ""}`}
-                        onClick={() => goToMentor(1, 1 < currentMentor ? "prev" : "next")}
-                    ></span>
-                    <span
-                        className={`dot ${currentMentor === 2 ? "active" : ""}`}
-                        onClick={() => goToMentor(2, 2 < currentMentor ? "prev" : "next")}
-                    ></span>
-                </div>
-
-                <div className="buttons-right">
-                    <button
-                        onClick={handlePrev}
-                        className={currentMentor === 0 ? "disabled" : ""}
-                        disabled={phase === "sliding" || currentMentor === 0}
-                    >
-                        &lt;
-                    </button>
-                    <button
-                        onClick={handleNext}
-                        className={currentMentor === 2 ? "disabled" : ""}
-                        disabled={phase === "sliding" || currentMentor === 2}
-                    >
-                        &gt;
-                    </button>
-                </div>
-            </div>
+            </section>
         );
-    };
+    }
 
     return (
         <section className="mentor-desktop">
@@ -237,19 +40,59 @@ function MentorDesktop() {
                 <h6>Đội ngũ giảng viên</h6>
             </div>
 
-            <div
-                className={`mentor-card-stage ${
-                    phase === "sliding" ? "is-sliding" : ""
-                }`}
-            >
-                {phase === "idle" ? (
-                    renderMentorCard(currentMentor, "current")
-                ) : (
-                    <>
-                        {renderMentorCard(currentMentor, "exiting")}
-                        {renderMentorCard(targetMentor, "entering")}
-                    </>
-                )}
+            <div className="mentor-card-stage">
+                <Carousel
+                    ref={carouselRef}
+                    initialSlide={currentMentor}
+                    afterChange={(current) => setCurrentMentor(current)}
+                    dots={false}
+                    arrows={false}
+                >   
+                    {mentors.map((item) => {
+                        const avatarPath = item.account?.avatarPath;
+                        const avatarUrl = avatarPath ? `${API_BASE_URL}${avatarPath}` : "";
+
+                        return (
+                            <div key={item.id}>
+                                <div className="mentor-card">
+
+                                    <div
+                                        className="mentor-image"
+                                        style={avatarUrl ? { backgroundImage: `url("${avatarUrl}")` } : undefined}
+                                    ></div>
+
+                                    <div className="mentor-info">
+                                        <span className="quote-icon">//</span>
+                                        <p style={{ whiteSpace: "pre-line" }}>
+                                            {item.description || "Chưa có mô tả."}
+                                        </p>
+
+                                        <div className="mentor-profile">
+                                            <h5>{item.account?.fullName || "Mentor"}</h5>
+                                            <h6>{item.position || ""}</h6>
+                                        </div>
+                                    </div>
+
+
+                                    <div className="dots-center">
+                                        {mentors.map((dotMentor, dotIndex) => (
+                                            <span
+                                                key={dotMentor.id}
+                                                className={`dot ${currentMentor === dotIndex ? "active" : ""}`}
+                                                onClick={() => handleGoTo(dotIndex)}
+                                            ></span>
+                                        ))}
+                                    </div>
+
+                                    <div className="buttons-right">
+                                        <button onClick={handlePrev}>&lt;</button>
+                                        <button onClick={handleNext}>&gt;</button>
+                                    </div>
+                                </div>
+                            </div>
+                        );
+                    })}
+                </Carousel>
             </div>
         </section>
     );

@@ -1,5 +1,5 @@
 function IntroMobile() {
-     return null;
+    return null;
 }
 
 export default IntroMobile;
