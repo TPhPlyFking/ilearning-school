@@ -16,11 +16,11 @@ function CurriculumDesktop() {
                 <div>
                     <h2>GIAI ĐOẠN HỌC 2: Chuyên môn sâu - Hướng chuyên sâu 1: Lập trình viên java</h2>
                     <div className="curriculum-2a-info">
-                        <p>-Môn 3: Lập trình hướng đối tượng</p>
-                        <p>-Môn 4: Cấu trúc dữ liệu và giải thuật</p>
-                        <p>-Môn 5: Các hệ cơ sở dữ liệu</p>
-                        <p>-Môn 6: Phát triển ứng dụng web</p>
-                        <p>-Môn 7 (không bắt buộc): Lập trình di động</p>
+                        <p>- Môn 3: Lập trình hướng đối tượng</p>
+                        <p>- Môn 4: Cấu trúc dữ liệu và giải thuật</p>
+                        <p>- Môn 5: Các hệ cơ sở dữ liệu</p>
+                        <p>- Môn 6: Phát triển ứng dụng web</p>
+                        <p>- Môn 7 (không bắt buộc): Lập trình di động</p>
                     </div>
                 </div>
                 <div>

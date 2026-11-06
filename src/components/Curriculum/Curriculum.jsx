@@ -1,6 +1,6 @@
 import CurriculumDesktop from "./CurriculumDesktop.jsx";
 import CurriculumMobile from "./CurriculumMobile.jsx";
-import UseMobileDetect from "../UseMobileDetect/UseMobileDetect.jsx"
+import UseMobileDetect from "../../hooks/UseMobileDetect.jsx"
 
 function Curriculum() {
     const isMobile = UseMobileDetect();

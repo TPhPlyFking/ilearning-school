@@ -1,20 +1,21 @@
 import coding from "../../picture/coding.jpg";
+import {Button} from "antd";
 
-function IntroDesktop() {
+function IntroDesktop({config}) {
+
+    const slide = config?.slider?.[0];
+
+    if (!slide) return null;
+
     return (
         <section className="intro">
-            <img src={coding} alt="coding"/>
+            <img src={coding} alt={slide.title} />
             <div className="intro-text">
-                <h1>
-                    Chương trình học mang lại kiến thức <br/>
-                    tổng quan để đi làm
-                </h1>
-                <p>
-                    Đào tạo theo nhu cầu doanh nghiệp, học viên tham gia chương trình<br/>
-                    sẽ có đưc những giá trị khác biệt: Tiết kiệm thời gian, tiền bạc,<br/>
-                    công sức và dễ dàng tham gia và định hướng sự nghiệp.
-                </p>
-                <button>Đăng ký ngay</button>
+                <h1>{slide.title}</h1>
+                <p>{slide.description}</p>
+                <Button type="primary" className="intro-btn">
+                    Đăng ký ngay
+                </Button>
             </div>
         </section>
     );

@@ -1,6 +1,6 @@
 import VideoMobile from './VideoMobile.jsx';
 import VideoDesktop from './VideoDesktop.jsx';
-import UseMobileDetect from '../UseMobileDetect/UseMobileDetect.jsx';
+import UseMobileDetect from '../../hooks/UseMobileDetect.jsx';
 
 function Video(){
     const isMobile = UseMobileDetect();

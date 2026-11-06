@@ -1,72 +1,72 @@
-function ReviewMobile() {
+const API_BASE_URL = "https://ai-project-api.moviehub.io.vn";
+
+function ReviewMobile({ reviews = [] }) {
+    const getAvatarUrl = (avatarPath) => {
+        if (!avatarPath) return "";
+
+        if (avatarPath.startsWith("http")) {
+            return avatarPath;
+        }
+
+        return `${API_BASE_URL}${avatarPath}`;
+    };
+
     return (
         <section className="review-mobile">
+            {reviews.map((item) => {
+                const fullName =
+                    item.student?.account?.fullName || "Học viên";
 
-            <div className="review-mobile-card">
-                <p className="review-quote">"</p>
+                const avatarPath =
+                    item.student?.account?.avatarPath;
 
-                <p className="review-text">
-                    Khóa học có lộ trình rõ ràng, a Việt và các bạn
-                    Mentor rất nhiệt tình, luôn support ngay lập tức
-                    trong buổi học cũng như là ngoài buổi để giải quyết
-                    vấn đề của học viên. Kiến thức Mentor sâu rộng nên
-                    hầu hết đều trả lời được thắc mắc học viên
-                </p>
+                const location =
+                    item.student?.address || "HO CHI MINH CITY";
 
-                <div className="review-user">
-                    <img src="" alt="Hiếu Hồ"/>
+                return (
+                    <div
+                        className="review-mobile-card"
+                        key={item.id}
+                    >
+                        <p className="review-quote">"</p>
 
-                    <div>
-                        <h5>Hiếu Hồ</h5>
-                        <h6>HO CHI MINH CITY</h6>
+                        <p
+                            className="review-text"
+                            style={{ whiteSpace: "pre-line" }}
+                        >
+                            {item.message || "Chưa có nội dung đánh giá."}
+                        </p>
+
+                        <div className="review-stars">
+                            {Array.from(
+                                { length: 5 },
+                                (_, index) => (
+                                    <span key={index}>
+                                        {index < (item.star || 0)
+                                            ? "★"
+                                            : "☆"}
+                                    </span>
+                                )
+                            )}
+                        </div>
+
+                        <div className="review-user">
+                            <img
+                                src={getAvatarUrl(avatarPath)}
+                                alt={fullName}
+                                onError={(event) => {
+                                    event.currentTarget.style.display = "none";
+                                }}
+                            />
+
+                            <div>
+                                <h5>{fullName}</h5>
+                                <h6>{location}</h6>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-
-
-            <div className="review-mobile-card">
-                <p className="review-quote">"</p>
-
-                <p className="review-text">
-                    Khóa học có lộ trình rõ ràng, a Việt và các bạn
-                    Mentor rất nhiệt tình, luôn support ngay lập tức
-                    trong buổi học cũng như là ngoài buổi để giải quyết
-                    vấn đề của học viên. Kiến thức Mentor sâu rộng nên
-                    hầu hết đều trả lời được thắc mắc học viên
-                </p>
-
-                <div className="review-user">
-                    <img src="" alt="Hiếu Hồ"/>
-
-                    <div>
-                        <h5>Hiếu Hồ</h5>
-                        <h6>HO CHI MINH CITY</h6>
-                    </div>
-                </div>
-            </div>
-
-
-            <div className="review-mobile-card">
-                <p className="review-quote">"</p>
-
-                <p className="review-text">
-                    Khóa học có lộ trình rõ ràng, a Việt và các bạn
-                    Mentor rất nhiệt tình, luôn support ngay lập tức
-                    trong buổi học cũng như là ngoài buổi để giải quyết
-                    vấn đề của học viên. Kiến thức Mentor sâu rộng nên
-                    hầu hết đều trả lời được thắc mắc học viên
-                </p>
-
-                <div className="review-user">
-                    <img src="" alt="Hiếu Hồ"/>
-
-                    <div>
-                        <h5>Hiếu Hồ</h5>
-                        <h6>HO CHI MINH CITY</h6>
-                    </div>
-                </div>
-            </div>
-
+                );
+            })}
         </section>
     );
 }

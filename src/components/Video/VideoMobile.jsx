@@ -1,11 +1,25 @@
-import spider from "../../picture/spider.png"
+import usePageConfig from "../../hooks/usePageConfig";
 
- function VideoMobile() {
+function VideoMobile() {
+    const config = usePageConfig();
+    const videoUrl = config?.video;
+
+    if (!videoUrl) return null;
+
+    const embedUrl = videoUrl.replace("youtu.be/", "www.youtube.com/embed/").split("?")[0];
+
     return (
         <section className="Video-Mobile">
-            <img src={spider} alt="Spider" />
+
+            <iframe
+                src={embedUrl}
+                title="Video Giới Thiệu"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+            ></iframe>
         </section>
     );
- }
+}
 
- export default VideoMobile;
+export default VideoMobile;

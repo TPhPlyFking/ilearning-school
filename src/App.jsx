@@ -19,12 +19,9 @@ function App() {
       <Video />
       <About />
       <Reality />
-      <Course />
       <Curriculum />
+      <Course />
       <AllCourse />
-      <Course />
-      <Course />
-      <Course />
       <Feeling />
       <Review />
       <Mentor />
