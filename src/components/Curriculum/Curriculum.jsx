@@ -23,9 +23,8 @@ function Curriculum() {
     stages.forEach((stage) => {
         const phase = stage.name.split(":")[0];
         if (!subjectsByPhase[phase]) {
-            subjectsByPhase[phase] = [];
+            subjectsByPhase[phase] = stage.subjects;
         }
-        subjectsByPhase[phase].push(...stage.subjects);
     });
 
     // Các ô cùng giai đoạn dùng chung một danh sách môn
