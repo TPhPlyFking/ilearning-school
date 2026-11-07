@@ -1566,14 +1566,14 @@ p {
 }
 
 .curriculum-stage-body {
-  margin-top: 18px;
+  margin-top: 3px;
 }
 
 .curriculum-stage-body p {
   margin: 0;
   font-size: clamp(14px, 0.94vw, 18px);
   font-weight: 400;
-  line-height: 1.7;
+  line-height: 1.5;
   color: #c9ced6;
 }
 
@@ -1607,7 +1607,7 @@ p {
 }
 
 .curriculum-mobile .curriculum-stage-head h2 {
-  font-size: 14px;
+  font-size: clamp(14px,1.1vw,18px);
   font-weight: 400;
   line-height: 1.5;
 }
@@ -1619,12 +1619,12 @@ p {
 }
 
 .curriculum-mobile .curriculum-stage-body {
-  margin-top: 12px;
+  margin-top: 8px;
 }
 
 .curriculum-mobile .curriculum-stage-body p {
   margin: 0 0 6px;
-  font-size: 13px;
+  font-size: clamp(11px, 0.9vw, 16px);
   line-height: 1.5;
   color: #c4c4c4;
 }
