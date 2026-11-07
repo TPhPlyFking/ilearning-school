@@ -1053,6 +1053,27 @@ p {
   color: #c4c4c4;
   margin: 0 0 clamp(24px, 2.1vw, 40px) 0;
   white-space: pre-line;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 8;
+  overflow: hidden;
+}
+
+.mentor-desktop .slick-track {
+  display: flex;
+}
+
+.mentor-desktop .slick-slide {
+  height: auto;
+}
+
+.mentor-desktop .slick-slide > div,
+.mentor-desktop .slick-slide > div > div {
+  height: 100%;
+}
+
+.mentor-desktop .mentor-card {
+  height: 100%;
 }
 .mentor-desktop .mentor-profile h5 {
   font-size: clamp(20px, 1.46vw, 28px);
@@ -1153,6 +1174,10 @@ p {
   line-height: 1.5;
   margin: 0 0 15px 0;
   color: #b0b0b0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  overflow: hidden;
 }
 .mentor-mobile .mentor-profile h5 {
   font-size: clamp(14px, 3vw, 16px);
