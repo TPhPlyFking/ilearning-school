@@ -1,7 +1,4 @@
-import usePageConfig from "../../hooks/usePageConfig";
-
-function VideoDesktop() {
-    const config = usePageConfig();
+function VideoDesktop({config}) {
 
     const videoUrl = config?.video;
 

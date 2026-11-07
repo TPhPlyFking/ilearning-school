@@ -10,14 +10,17 @@ import Header from "./components/Header/Header.jsx";
 import Review from "./components/Review/Review.jsx"
 import Mentor from "./components/Mentor/Mentor.jsx"
 import Partner from "./components/Partner/Partner.jsx";
+import usePageConfig from "./hooks/usePageConfig.jsx";
 
 function App() {
+  const config = usePageConfig();
+
   return (
     <>
       <Header />
-      <Intro />
-      <Video />
-      <About />
+      <Intro config={config} />
+      <Video config={config} />
+      <About config={config} />
       <Reality />
       <Curriculum />
       <Course />

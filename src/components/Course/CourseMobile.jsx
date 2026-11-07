@@ -1,6 +1,7 @@
 import uni from "../../picture/uni.jpg";
-import { Collapse } from "antd-mobile";
+import { useState } from "react";
 function CourseMobile({classrooms}) {
+    const [openId, setOpenId] = useState(null);
     return (
         <>
             {classrooms.map((lop) =>(
@@ -14,23 +15,21 @@ function CourseMobile({classrooms}) {
                             {lop.course.price.toLocaleString("vi-VN")} đ
                         </p>
 
+
+
                         <div className="course-mobile-details">
-                            {lop.course.shortDescription.split("\n").slice(0, 4).map((dong, index) =>(
+                            {(openId === lop.id
+                                ? lop.course.shortDescription.split("\n")
+                                : lop.course.shortDescription.split("\n").slice(0, 4)
+                            ).map((dong, index) => (
                                 <p key={index}>{dong}</p>
                             ))}
                         </div>
 
-                        <div className="course-mobile-more">
-                            <Collapse>
-                                <Collapse.Panel key="1" title="Xem thêm">
-                                    <ul>
-                                        <li>
-                                            <a href="#">Chi tiết</a>
-                                        </li>
-                                    </ul>
-                                </Collapse.Panel>
-                            </Collapse>
-                        </div>
+                        <button className={"course-mobile-more" + (openId === lop.id ? " open" : "")}
+                                onClick={() => setOpenId(openId === lop.id ? null : lop.id)}>
+                            {openId === lop.id ? "Thu gọn" : "Xem thêm"}
+                        </button>
                     </div>
                 </section>
             ))}

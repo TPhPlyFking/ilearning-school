@@ -1,6 +1,8 @@
 import uni from "../../picture/uni.jpg";
+import { useState } from "react";
 
 function CourseDesktop({classrooms}){
+    const [openId, setOpenId] = useState(null);
 
     return (
         <>
@@ -15,19 +17,17 @@ function CourseDesktop({classrooms}){
                             </p>
                         </div>
                         <div className="course-details">
-                            {}
-                            {lop.course.shortDescription.split("\n").slice(0, 4).map((dong, index) => (
+                            {(openId === lop.id
+                                ? lop.course.shortDescription.split("\n")
+                                : lop.course.shortDescription.split("\n").slice(0, 4)
+                            ).map((dong, index) => (
                                 <p key={index}>{dong}</p>
                             ))}
                         </div>
-                        <details className="more">
-                            <summary>Xem thêm</summary>
-                            <ul>
-                                <li>
-                                    <a href="#">Chi tiết</a>
-                                </li>
-                            </ul>
-                        </details>
+                        <button className={"more" + (openId === lop.id ? " open" : "")}
+                                onClick={() => setOpenId(openId === lop.id ? null : lop.id)}>
+                            {openId === lop.id ? "Thu gọn" : "Xem thêm"}
+                        </button>
                     </div>
                 </section>
             ))}
