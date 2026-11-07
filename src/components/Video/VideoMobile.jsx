@@ -1,7 +1,4 @@
-import usePageConfig from "../../hooks/usePageConfig";
-
-function VideoMobile() {
-    const config = usePageConfig();
+function VideoMobile({config}) {
     const videoUrl = config?.video;
 
     if (!videoUrl) return null;

@@ -7,7 +7,7 @@ export default function useMentors() {
     useEffect(() => {
         async function loadData() {
             const data = await fetchApiData("/v1/mentor/public/list", {
-                page: 1,
+                page: 0,
                 size: 5,
             });
 

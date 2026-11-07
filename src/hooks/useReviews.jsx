@@ -7,7 +7,7 @@ export default function useReviews() {
     useEffect(() => {
         async function loadData() {
             const data = await fetchApiData("/v1/rating/public/list", {
-                page: 1,
+                page: 0,
                 size: 3,
             });
 

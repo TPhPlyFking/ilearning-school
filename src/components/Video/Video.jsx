@@ -2,12 +2,12 @@ import VideoMobile from './VideoMobile.jsx';
 import VideoDesktop from './VideoDesktop.jsx';
 import UseMobileDetect from '../../hooks/UseMobileDetect.jsx';
 
-function Video(){
+function Video({config}){
     const isMobile = UseMobileDetect();
     if (isMobile) {
-        return <VideoMobile />;
+        return <VideoMobile config={config} />;
     }
-    return <VideoDesktop />;
+    return <VideoDesktop config={config} />;
 }
 
 export default Video;

@@ -1,7 +1,4 @@
-import usePageConfig from "../../hooks/usePageConfig";
-
-function AboutDesktop() {
-    const config = usePageConfig();
+function AboutDesktop({config}) {
 
     const aboutData = config?.description;
 

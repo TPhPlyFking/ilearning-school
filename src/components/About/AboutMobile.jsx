@@ -1,7 +1,4 @@
-import usePageConfig from "../../hooks/usePageConfig.jsx";
-
-function AboutMobile() {
-    const config = usePageConfig();
+function AboutMobile({config}) {
 
     const aboutData = config?.description;
 
