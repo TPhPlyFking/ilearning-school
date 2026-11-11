@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap&subset=vietnamese');
+
+/* ===== Nền chung ===== */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #182029;
+  font-family: 'Inter', system-ui, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Quy tắc: clamp(min, X vw, max) với X = px Figma / 19.2 — không dùng @media */
+
+/* ===== Header ===== */
+
+/* ===== Intro ===== */
+
+/* ===== Video ===== */
+
+/* ===== About ===== */
+
+/* ===== Reality ===== */
+
+/* ===== Curriculum ===== */
+
+/* ===== Course ===== */
+
+/* ===== AllCourse ===== */
+
+/* ===== Feeling ===== */
+
+/* ===== Review ===== */
+
+/* ===== Mentor ===== */
+
+/* ===== Partner ===== */
