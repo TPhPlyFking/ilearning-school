@@ -6,37 +6,36 @@ import useCurriculum from "../../hooks/useCurriculum";
 function Curriculum() {
     const isMobile = UseMobileDetect();
     const curriculum = useCurriculum("9719885062930432");
-    const sorted = [...curriculum].sort((a, b) => a.ordering - b.ordering);
 
-    // Gom nhóm: kind 1 là giai đoạn, các dòng kind 2 ngay sau nó là môn của giai đoạn đó
+    // Bước 1: gom thành từng giai đoạn
+    // kind 1 = giai đoạn, kind 2 = môn của giai đoạn đứng ngay trước nó
     const stages = [];
-    sorted.forEach((item) => {
+    let currentStage = null;
+
+    curriculum.forEach((item) => {
         if (item.kind === 1) {
-            stages.push({ ...item, subjects: [] });
-        } else if (stages.length > 0) {
-            stages[stages.length - 1].subjects.push(item);
+            currentStage = { ...item, subjects: [] };
+            stages.push(currentStage);
+        } else if (currentStage !== null) {
+            currentStage.subjects.push(item);
         }
     });
 
-    // Gom môn theo tên giai đoạn (phần trước dấu ":"), ví dụ "GIAI ĐOẠN HỌC 2"
-    const subjectsByPhase = {};
+    // Bước 2: các ô cùng giai đoạn (cùng chữ trước dấu ":") dùng môn của ô đầu tiên
+    const firstSubjects = {};
+
     stages.forEach((stage) => {
         const phase = stage.name.split(":")[0];
-        if (!subjectsByPhase[phase]) {
-            subjectsByPhase[phase] = stage.subjects;
+        if (firstSubjects[phase] === undefined) {
+            firstSubjects[phase] = stage.subjects;
         }
+        stage.subjects = firstSubjects[phase];
     });
 
-    // Các ô cùng giai đoạn dùng chung một danh sách môn
-    const fullStages = stages.map((stage) => ({
-        ...stage,
-        subjects: subjectsByPhase[stage.name.split(":")[0]],
-    }));
-
     if (isMobile) {
-        return <CurriculumMobile stages={fullStages} />;
+        return <CurriculumMobile stages={stages} />;
     }
-    return <CurriculumDesktop stages={fullStages} />;
+    return <CurriculumDesktop stages={stages} />;
 }
 
 export default Curriculum;
