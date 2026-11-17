@@ -31,6 +31,10 @@ body {
   box-sizing: border-box;
   background-color: #303030;
   margin: 0 auto;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
 }
 
 .header-content {
@@ -161,7 +165,7 @@ body {
 }
 
 .header-mobile {
-  position: relative;
+  position: sticky;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -169,6 +173,10 @@ body {
   box-sizing: border-box;
   padding: 15px 20px;
   gap: clamp(12px, 2vw, 24px);
+  top: 0;
+  z-index: 100;
+  background-color: #1b232e;
+
 }
 
 .mobile-logo {
