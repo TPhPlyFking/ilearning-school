@@ -9,10 +9,14 @@ function HeaderMobile () {
                 <img src={logoIcon} alt="logo" className="icon-mobile" />
                 <p>ilearning<br/>School</p>
             </div>
-            <button className="mobile-menu"
-            onClick = {() => setIsOpen(!isOpen)}>
-                ☰
-            </button>
+            <div className="header-right">
+                <button className="contact-mobile">Liên hệ tư vấn</button>
+                <button className="mobile-menu" onClick={() => setIsOpen(!isOpen)}>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
             {isOpen && (
                 <nav className="link-mobile">
                     <a href="#">Trang chủ</a>
