@@ -17,6 +17,10 @@ function HeaderMobile () {
                     <span></span>
                 </button>
             </div>
+            <button className="mobile-menu"
+            onClick = {() => setIsOpen(!isOpen)}>
+                ☰
+            </button>
             {isOpen && (
                 <nav className="link-mobile">
                     <a href="#">Trang chủ</a>

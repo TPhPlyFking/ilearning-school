@@ -180,6 +180,7 @@ body {
 
 .icon-mobile {
   width: clamp(38px, 3.1vw, 44px);
+  width: clamp(35px, 3.1vw, 44px);
   height: auto;
   display: block;
 }
@@ -230,6 +231,21 @@ body {
   height: clamp(2.5px, 0.7vw, 4px);
   background-color: #ffffff;
   border-radius: 3px;
+=======
+  font-size: clamp(17px, 1.14vw,22px);
+}
+
+.mobile-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--text-color);
+  border: none;
+  color: #FFFFFF;
+  border-radius: 6px;
+  width: 36px;
+  height: 36px;
+>>>>>>> d1b962b297c887e978bbab30ad1d89470563d116
 }
 
 .link-mobile {
@@ -384,6 +400,7 @@ body {
 .about-mobile {
   margin: 30px auto 0;
   max-width: clamp(200px, 88vw, 600px);
+  max-width: clamp(200px, 88vw, 900px);
   background-color: #15CCA3;
   border-radius: 10px;
   box-sizing: border-box;
@@ -587,6 +604,8 @@ body {
 .course-mobile {
   width: 100%;
   max-width: clamp(200px, 88vw, 600px);
+  width: calc(100% - 24px);
+  max-width: 600px;
   margin: 0 auto clamp(24px, 5.8vw, 40px);
   padding: clamp(12px, 2.9vw, 24px) clamp(12px, 2.9vw, 24px) clamp(20px, 4.8vw, 32px);
   border-radius: 8px;
