@@ -613,7 +613,7 @@ body {
   height: auto;
   aspect-ratio: 557 / 393;
   object-fit: cover;
-  border-radius: 13px;
+  border-radius: 15px;
 }
 
 .course-mobile-content {
