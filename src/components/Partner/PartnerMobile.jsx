@@ -16,7 +16,7 @@ function PartnerMobile() {
 
     return (
         <section className="partner-mobile" style={{
-            width: 'calc(100% - 24px)',
+            width: 'calc(100% - 20px)',
             margin: '40px auto',
             padding: '30px 0',
             boxSizing: 'border-box',

@@ -1,5 +1,6 @@
 import uni from "../../picture/uni.jpg";
 import { useState } from "react";
+
 function CourseMobile({classrooms}) {
     const [openId, setOpenId] = useState([]);
     return (

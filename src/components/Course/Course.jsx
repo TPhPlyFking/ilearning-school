@@ -13,9 +13,7 @@ function Course() {
 
     return (
         <>
-            {isMobile
-                ? <CourseMobile classrooms={show} />
-                : <CourseDesktop classrooms={show} />}
+            {isMobile ? <CourseMobile classrooms={show} /> : <CourseDesktop classrooms={show} />}
             <AllCourse showAll={showAll} onClick={() => setShowAll(!showAll)} />
         </>
     );
