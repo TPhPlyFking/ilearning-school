@@ -1,19 +1,18 @@
 import {useState, useEffect} from 'react';
 
-function useMobileDetect() {
-    const mediaQuery = window.matchMedia("(max-width: 900px)");
+function UseMobileDetect() {
+    const mediaQuery = window.matchMedia("(max-width:900px)");
     const [isMobile, setIsMobile] = useState(mediaQuery.matches);
 
-    useEffect (() => {
+    useEffect(() => {
         const handleChange = (event) => {
             setIsMobile(event.matches);
         }
         mediaQuery.addEventListener("change", handleChange);
         return () => {
-            mediaQuery.removeEventListener("change", handleChange);
+            mediaQuery.removeEventListener("change", handleChange)
         }
     }, []);
     return isMobile;
 }
-
-export default useMobileDetect;
+export default UseMobileDetect;

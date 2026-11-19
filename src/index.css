@@ -73,14 +73,14 @@ body {
 
 .search {
   flex:  1 1 490px;
-  max-width: clamp(300px,40vw, 520px);
+  max-width: clamp(200px,26vw, 460px);
   min-width: 120px;
   margin-left: clamp(0px, 0.5vw, 10px);
 }
 
 .search input {
   width: 100%;
-  height: clamp(36px, 2.6vw, 50px);
+  height: clamp(30px, 3vw, 55px);
   padding: 0 clamp(8px, 0.5vw, 12px);
   font-size: clamp(12px, 1vw, 20px);
   background-color: #090C0F;
@@ -95,10 +95,12 @@ body {
   align-items: center;
   flex-shrink: 0;
   margin-left: auto;
-  gap: clamp(4px, 1.5vw, 40px);
+  gap: clamp(10px, 2.76vw, 53px);
   color: #959595;
   white-space: nowrap;
-  font-size: clamp(11px, 1.14vw, 22px);
+  font-size: clamp(11px, 1.04vw, 20px);
+  font-weight: 500;
+  line-height: 1;
 }
 
 .link a {
@@ -149,18 +151,18 @@ body {
 .link .link-detail summary::after {
   content: "";
   display: inline-block;
-  width: 8px;
-  height: 8px;
-  margin-left: 8px;
-  margin-top: -4px;
-  border-right: 2px solid #959595;
-  border-bottom: 2px solid #959595;
+  width: 0.4em;
+  height: 0.4em;
+  margin-left: 0.4em;
+  margin-top: -0.2em;
+  border-right: 0.1em solid currentColor;
+  border-bottom: 0.1em solid currentColor;
   transform: rotate(45deg);
 }
 
 .divider {
   width: 1px;
-  height: clamp(16px, 1.25vw, 24px);
+  height: 1.2em;
   background: #959595;
 }
 
@@ -511,12 +513,12 @@ body {
   max-width: clamp(820px ,75vw,1440px);
   width: calc(100% - 20px);
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   background-color: #090c0f;
   border-radius: 20px;
   height: auto;
-  min-height: clamp(200px, 26vw, 500px);
-  padding: clamp(20px, 2.6vw, 50px) clamp(30px, 4.58vw, 88px);  box-sizing: border-box;
+  padding: clamp(20px, 2.1vw, 40px) clamp(30px, 4.58vw, 88px);
+  box-sizing: border-box;
   gap: clamp(30px, 5.68vw, 109px);
 
 }
@@ -527,6 +529,7 @@ body {
   aspect-ratio: 557 / 393;
   border-radius: 20px;
   object-fit: cover;
+  margin-top: clamp(15px, 1.6vw, 31px);
 
 }
 
@@ -613,6 +616,7 @@ body {
   text-underline-offset: 4px;
   cursor: pointer;
   box-sizing: border-box;
+  margin-top: clamp(20px, 1.82vw, 35px);
 }
 
 .more:hover {
