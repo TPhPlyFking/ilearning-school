@@ -744,6 +744,132 @@ body {
 /* ===== Feeling ===== */
 
 /* ===== Review ===== */
+.review-desktop {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: clamp(20px, 2.08vw, 40px);
+  width: calc(100% - 40px);
+  max-width: 1440px;
+  margin: 0 auto clamp(60px, 5.2vw, 100px);
+  box-sizing: border-box;
+}
+
+.review-desktop-card {
+  flex: 1;
+  min-width: 0;
+  min-height: 539px;
+  display: flex;
+  flex-direction: column;
+  background: #090c0f;
+  border-radius: 10px;
+  padding: clamp(50px, 4.7vw, 90px) clamp(20px, 1.56vw, 30px) clamp(30px, 2.6vw, 50px);
+  color: #ffffff;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.review-desktop .review-quote {
+  margin: 0 0 clamp(30px, 3vw, 58px);
+  height: 40px;
+  font-size: 80px;
+  font-family: Georgia, serif;
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1;
+  color: #d9d9d9;
+}
+
+.review-desktop .review-text {
+  flex: 1;
+  margin: 0 0 24px;
+  color: #c4c4c4;
+  font-size: clamp(14px, 0.94vw, 18px);
+  line-height: 1.89;
+  text-indent: 1.2em;
+  white-space: pre-line;
+}
+
+.review-desktop .review-stars {
+  margin-bottom: 20px;
+  color: #f5c451;
+  font-size: 16px;
+  letter-spacing: 3px;
+}
+
+.review-desktop .review-user {
+  gap: clamp(12px, 1.04vw, 20px);
+}
+
+.review-desktop .review-user img {
+  width: clamp(56px, 4.06vw, 78px);
+  height: clamp(56px, 4.06vw, 78px);
+  background: #1f2124;
+}
+
+.review-desktop .review-user h5 {
+  margin: 0 0 4px;
+  color: #b3b3b3;
+  font-size: clamp(18px, 1.25vw, 24px);
+  font-weight: 600;
+  white-space: normal;
+}
+
+.review-desktop .review-user h6 {
+  margin: 0;
+  color: #c4c4c4;
+  font-size: clamp(13px, 0.94vw, 18px);
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  white-space: normal;
+}
+
+.review-quote {
+  margin: 0 0 15px;
+  font-size: 55px;
+  font-family: serif;
+  line-height: 1;
+  color: #a0a6b1;
+}
+
+.review-text {
+  margin: 0 0 30px;
+  color: #a0a6b1;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.review-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.review-user img {
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.review-user h5 {
+  margin: 0 0 4px;
+  color: #a0a6b1;
+  font-size: 18px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.review-user h6 {
+  margin: 0;
+  color: #717886;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
 
 /* ===== Mentor ===== */
 

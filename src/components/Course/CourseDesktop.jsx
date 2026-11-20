@@ -1,7 +1,7 @@
 import uni from "../../picture/uni.jpg"
 import { useState } from 'react';
 
-function CourseDesktop({classrooms}) {
+function CourseDesktop({classrooms = []}) {
     const [openId, setOpenId] = useState([]);
     return (
         <>
