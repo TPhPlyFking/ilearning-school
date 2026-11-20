@@ -1,5 +1,5 @@
 import uni from "../../picture/uni.jpg"
-import {useState} from 'react';
+import { useState } from 'react';
 
 function CourseDesktop({classrooms}) {
     const [openId, setOpenId] = useState([]);
