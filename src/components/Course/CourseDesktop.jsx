@@ -16,20 +16,21 @@ function CourseDesktop({classrooms = []}) {
                             </p>
                         </div>
                         <div className="course-details">
-                            {(openId.includes(lop.id)
-                                ? lop.course.shortDescription.split("\n") :
+                            { (openId.includes(lop.id) ? lop.course.shortDescription.split("\n") :
                                 lop.course.shortDescription.split("\n").slice(0, 4)).map((dong, index) => (
                                     <p key={index}>{dong}</p>
-                            ))}
-                            <button className={"more" + (openId.includes(lop.id) ? " open" : "")}
-                                    onClick={() => {
-                                        if (openId.includes(lop.id)) {
-                                            setOpenId(openId.filter((id) => id !== lop.id));
-                                        } else {
-                                            setOpenId([...openId, lop.id]);
-                                        }
-                                    }}>
-                                {openId.includes(lop.id) ? "Thu gọn" : "Xem thêm"}
+                            ))
+
+                            }
+
+                            <button className={"more" + (openId.includes(lop.id) ? " open" : "")} onClick={() => {
+                                if (openId.includes(lop.id)) {
+                                    setOpenId(openId.filter((id) => id !== lop.id));
+                                } else {
+                                    setOpenId([...openId, lop.id]);
+                                }
+                            }}>
+                                {openId.includes(lop.id) ? "Rút gọn" : "Xem thêm"}
                             </button>
                         </div>
 

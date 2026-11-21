@@ -9,7 +9,7 @@ function Course() {
     const isMobile = useMobileDetect();
     const classrooms = useClassrooms();
     const [showAll, setShowAll] = useState(false);
-    const show = showAll ? classrooms : classrooms.slice(0, 3);
+    const show = showAll ? classrooms : classrooms.slice(0, 4);
 
     return (
         <>
