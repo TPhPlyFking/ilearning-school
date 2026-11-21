@@ -875,7 +875,8 @@ body {
   display: flex;
   align-items: stretch;
   gap: clamp(8px, 3.1vw, 14px);
-  width: calc(100% - clamp(16px, 6.2vw, 28px));
+  max-width: clamp(820px ,75vw,1440px);
+  width: calc(100% - 20px);
   margin: clamp(18px, 6.4vw, 30px) auto;
   box-sizing: border-box;
 }
@@ -888,6 +889,8 @@ body {
   padding: clamp(12px, 4.1vw, 20px) clamp(8px, 3.1vw, 14px);
   color: white;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 
 .review-mobile-card .review-quote {
@@ -900,8 +903,9 @@ body {
 .review-mobile-card .review-text {
   margin: 0 0 15px;
   color: #a0a6b1;
-  font-size: clamp(7px, 2.3vw, 11px);
+  font-size: clamp(4px, 0.5vw, 8px);
   line-height: 1.5;
+
 }
 
 .review-mobile-card .review-user {
@@ -916,6 +920,12 @@ body {
   flex-shrink: 0;
   border-radius: 50%;
   object-fit: cover;
+}
+
+.review-mobile-card .review-stars {
+  margin-bottom: 8px;
+  color: #f5c451;
+  font-size: clamp(8px, 2.6vw, 12px);
 }
 
 .review-mobile-card .review-user h5 {
