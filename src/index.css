@@ -277,7 +277,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: clamp(28px, 7vw, 44px) clamp(16px, 4vw, 28px) clamp(14px, 3.4vw, 22px);
+  padding: clamp(20px, 5vw, 32px) clamp(16px, 4vw, 28px);
   background-color: #15cca3;
   color: #ffffff;
   font-size: clamp(20px, 5vw, 30px);
@@ -297,15 +297,22 @@ body {
   display: flex;
   flex-direction: column;
   gap: clamp(20px, 5vw, 32px);
-  padding: clamp(20px, 5vw, 32px) clamp(16px, 4vw, 28px);
+  padding: 0 clamp(16px, 4vw, 28px);
 }
 
 .menu-links a {
   color: #c4c4c4;
   text-decoration: none;
   font-size: clamp(15px, 3.8vw, 20px);
+  display: block;
+  padding: clamp(16px, 4vw, 26px) 0;
+  border-bottom: 1px solid #3a4150;
 }
 
+.menu-links a:last-child {
+  border-bottom: none;
+}
+border-bottom: none;
 /* ===== Intro ===== */
 .intro {
   position: relative;
