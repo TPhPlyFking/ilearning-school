@@ -312,7 +312,8 @@ body {
 .menu-links a:last-child {
   border-bottom: none;
 }
-border-bottom: none;
+
+
 /* ===== Intro ===== */
 .intro {
   position: relative;
