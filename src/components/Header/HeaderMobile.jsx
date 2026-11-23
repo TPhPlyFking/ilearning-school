@@ -21,7 +21,9 @@ function HeaderMobile () {
             </header>
 
             <div className={"menu-overlay" + (isOpen ? " open" : "")}
-                onClick={() => setIsOpen(false)}></div>
+                onClick={() => setIsOpen(false)}>
+
+            </div>
 
             <nav className={"menu-panel" + (isOpen ? " open" : "")}>
                 <div className="menu-panel-header">
