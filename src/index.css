@@ -682,7 +682,7 @@ body {
   flex: 0 1 auto;
   width: clamp(300px,29vw,557px);
   aspect-ratio: 557 / 393;
-  border-radius: 20px;
+  border-radius: 25px;
   object-fit: cover;
   margin-top: clamp(15px, 1.6vw, 31px);
 
@@ -899,6 +899,24 @@ body {
 /* ===== Feeling ===== */
 
 /* ===== Review ===== */
+.review-heading {
+  text-align: center;
+  color: #ffffff;
+  margin: clamp(50px, 5.2vw, 100px) 0 0;
+}
+
+.review-heading p {
+  margin: 0 0 clamp(4px, 0.5vw, 10px);
+  font-size: clamp(14px, 1.04vw, 20px);
+  font-weight: 500;
+}
+
+.review-heading h2 {
+  margin: 0;
+  font-size: clamp(16px, 1.25vw, 24px);
+  font-weight: 700;
+}
+
 .review-desktop {
   display: flex;
   align-items: stretch;
@@ -906,7 +924,7 @@ body {
   gap: clamp(20px, 2.08vw, 40px);
   max-width: clamp(820px ,75vw,1440px);
   width: calc(100% - 20px);
-  margin: clamp(50px,5.2vw, 100px) auto clamp(60px, 5.2vw, 100px);
+  margin: clamp(30px, 3.1vw, 60px) auto clamp(60px, 5.2vw, 100px);
   box-sizing: border-box;
 }
 

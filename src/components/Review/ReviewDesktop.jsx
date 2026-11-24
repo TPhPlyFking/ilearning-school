@@ -9,7 +9,12 @@ function ReviewDesktop({reviews = []}) {
         return `${API_BASE_URL}${avatarPath}`;
     };
     return (
-        <section className="review-desktop">
+        <section className="review-section">
+            <div className="review-heading">
+                <p>Cảm nhận của học viên</p>
+                <h2>Mọi người nói gì về UI8</h2>
+            </div>
+            <div className="review-desktop">
             {reviews.map((item) => {
                 const fullName = item.student?.fullName || "Học viên";
                 const avatarPath = item.student?.account?.avatarPath;
@@ -51,6 +56,7 @@ function ReviewDesktop({reviews = []}) {
                     </div>
                 )
                 })}
+            </div>
         </section>
     )
 }

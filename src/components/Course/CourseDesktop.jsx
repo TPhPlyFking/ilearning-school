@@ -7,7 +7,6 @@ function CourseDesktop({classrooms = []}) {
     return (
         <>
             {classrooms.map((lop) => {
-                // Gom giáo trình phẳng thành từng giai đoạn kèm danh sách môn
                 const stages = [];
                 let currentStage = null;
                 lop.curriculum.forEach((item) => {
@@ -53,7 +52,6 @@ function CourseDesktop({classrooms = []}) {
 
                 </section>
 
-                {/* Giáo trình: mở cùng lúc với "Xem thêm" (dùng chung openId) */}
                 {lop.curriculum.length > 0 && (
                     <div className={"curriculum" + (openId.includes(lop.id) ? " open" : "")}>
                         <div className="curriculum-inner">
