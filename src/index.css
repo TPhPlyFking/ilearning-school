@@ -548,6 +548,119 @@ body {
 
 /* ===== Curriculum ===== */
 
+.course-block {
+  margin: 0 auto clamp(30px, 5.2vw, 100px);
+  max-width: clamp(820px ,75vw,1440px);
+  width: calc(100% - 20px);
+}
+
+.course-block .course {
+  margin: 0 auto 16px;
+  width: 100%;
+}
+
+/* Giáo trình trượt xuống: cao 0 -> cao tự nhiên */
+.curriculum {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s;
+}
+
+.curriculum.open {
+  grid-template-rows: 1fr;
+}
+
+.curriculum-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.curriculum-card {
+  background-color: #090c0f;
+  border-radius: 20px;
+  padding: clamp(16px, 2.4vw, 46px);
+  color: #ffffff;
+}
+
+.curriculum-card h3 {
+  margin: 0 0 clamp(12px, 1.4vw, 26px) 0;
+  font-size: clamp(18px, 1.82vw, 35px);
+  font-weight: 500;
+}
+
+.stage {
+  background-color: #1e2227;
+  border-radius: 14px;
+  margin-bottom: clamp(8px, 0.9vw, 17px);
+  padding: 0 clamp(14px, 1.9vw, 36px);
+}
+
+.stage:last-child {
+  margin-bottom: 0;
+}
+
+.stage-head {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 1.2vw, 22px);
+  padding: clamp(14px, 1.6vw, 30px) 0;
+}
+
+.stage-head p {
+  flex: 1;
+  margin: 0;
+  font-size: clamp(14px, 1.25vw, 24px);
+  line-height: 1.4;
+}
+
+.stage-time {
+  background-color: #15cca3;
+  color: #ffffff;
+  border-radius: 10px;
+  padding: clamp(6px, 0.75vw, 14px) clamp(12px, 1.5vw, 28px);
+  font-size: clamp(13px, 1.25vw, 24px);
+  white-space: nowrap;
+}
+
+.stage-btn {
+  width: clamp(30px, 3vw, 58px);
+  padding: 0;
+  border: none;
+  background: none;
+  color: #9a9a9a;
+  font-size: clamp(36px, 3.8vw, 72px);
+  font-weight: 200;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* môn học trong giai đoạn: cũng trượt xuống */
+.stage-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s;
+}
+
+.stage-body.open {
+  grid-template-rows: 1fr;
+}
+
+.stage-body-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.stage-body-inner p {
+  margin: 0 0 clamp(7px, 0.7vw, 13px) 0;
+  font-size: clamp(12px, 1.04vw, 20px);
+  line-height: 1.5;
+  color: #c4c4c4;
+}
+
+.stage-body.open .stage-body-inner {
+  padding-bottom: clamp(10px, 1.2vw, 22px);
+}
+
 /* ===== Course ===== */
 .course {
   margin: 0 auto clamp(30px, 5.2vw, 100px);
