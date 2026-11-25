@@ -13,13 +13,13 @@ export default function useCourse(){
             if (data === null) return;
 
             const list = await Promise.all(
-                data.content.map(async (lop) => {
-                    const gt = await fetchApiData("/v1/syllabus/public/list", {
-                        courseId: lop.course.id,
-                        page: 0,
-                        size: 20,
-                    });
-                    return { ...lop, curriculum: gt && gt.content ? gt.content : [] };
+                data.content.map(async(lop) => {
+                    const gt = await fetchApiData("/v1/syllabus/public/list",
+                        { courseId : lop.course.id,
+                            page: 0,
+                            size: 20,
+                        });
+                    return { ...lop, curriculum: gt && gt.content ?  gt.content : []};
                 })
             );
             setClassrooms(list);

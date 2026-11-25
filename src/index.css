@@ -796,7 +796,7 @@ body {
   max-width: 600px;
   margin: 0 auto clamp(24px, 5.8vw, 40px);
   padding: clamp(12px, 2.9vw, 24px) clamp(12px, 2.9vw, 24px) clamp(20px, 4.8vw, 32px);
-  border-radius: 8px;
+  border-radius: 20px;
   background-color: #090c0f;
   box-sizing: border-box;
 }
@@ -807,7 +807,7 @@ body {
   height: auto;
   aspect-ratio: 557 / 393;
   object-fit: cover;
-  border-radius: 15px;
+  border-radius: 20px;
 }
 
 .course-mobile-content {
@@ -892,6 +892,48 @@ body {
 
 .course-mobile-more:hover {
   background-color: #12b38f;
+}
+
+/* Giáo trình trên mobile: dùng lại class của desktop, chỉ chỉnh nhỏ lại cho vừa màn hình */
+.course-mobile .curriculum-card {
+  background-color: transparent;
+  padding: clamp(14px, 3.4vw, 24px) 0 0;
+}
+
+.course-mobile .curriculum-card h3 {
+  font-size: clamp(16px, 3.8vw, 26px);
+  margin-bottom: clamp(10px, 2.4vw, 16px);
+}
+
+.course-mobile .stage {
+  padding: 0 clamp(12px, 3vw, 20px);
+  margin-bottom: clamp(8px, 2vw, 12px);
+  border-radius: 10px;
+}
+
+.course-mobile .stage-head {
+  gap: clamp(8px, 2vw, 14px);
+  padding: clamp(12px, 3vw, 20px) 0;
+}
+
+.course-mobile .stage-head p {
+  font-size: clamp(13px, 3.1vw, 20px);
+}
+
+.course-mobile .stage-time {
+  font-size: clamp(11px, 2.7vw, 17px);
+  padding: clamp(3px, 0.9vw, 6px) clamp(8px, 2vw, 14px);
+  border-radius: 6px;
+}
+
+.course-mobile .stage-btn {
+  width: clamp(24px, 6vw, 40px);
+  font-size: clamp(28px, 7vw, 46px);
+}
+
+.course-mobile .stage-body-inner p {
+  font-size: clamp(12px, 2.9vw, 18px);
+  margin-bottom: clamp(6px, 1.5vw, 10px);
 }
 
 /* ===== AllCourse ===== */
