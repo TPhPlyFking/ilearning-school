@@ -1,5 +1,6 @@
-import uni from "../../picture/uni.jpg"
 import { useState } from 'react';
+
+const API_BASE_URL = "https://ai-project-api.moviehub.io.vn";
 
 function CourseDesktop({classrooms = []}) {
     const [openId, setOpenId] = useState([]);
@@ -21,7 +22,7 @@ function CourseDesktop({classrooms = []}) {
                 return (
                 <div className="course-block" key={lop.id}>
                 <section className="course">
-                    <img className="course-Img" src={uni} alt={uni}/>
+                    <img className="course-Img" src={API_BASE_URL + "/v1/file/download" + lop.course.avatar} alt={lop.course.name}/>
                     <div className="course-intro-details">
                         <div className="course-intro">
                             <h2>{lop.course.name}</h2>

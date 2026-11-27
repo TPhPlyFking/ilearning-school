@@ -549,7 +549,7 @@ body {
 /* ===== Curriculum ===== */
 
 .course-block {
-  margin: 0 auto clamp(30px, 5.2vw, 100px);
+  margin: 0 auto;
   max-width: clamp(820px ,75vw,1440px);
   width: calc(100% - 20px);
 }
@@ -557,6 +557,11 @@ body {
 .course-block .course {
   margin: 0 auto 16px;
   width: 100%;
+}
+
+/* khoảng cách giữa 2 khóa học liền nhau */
+.course-block + .course-block {
+  margin-top: clamp(30px, 4.2vw, 82px);
 }
 
 /* Giáo trình trượt xuống: cao 0 -> cao tự nhiên */
@@ -944,7 +949,7 @@ body {
 .review-heading {
   text-align: center;
   color: #ffffff;
-  margin: clamp(50px, 5.2vw, 100px) 0 0;
+  margin: clamp(40px, 4.3vw, 82px) 0 0;
 }
 
 .review-heading p {
@@ -966,7 +971,7 @@ body {
   gap: clamp(20px, 2.08vw, 40px);
   max-width: clamp(820px ,75vw,1440px);
   width: calc(100% - 20px);
-  margin: clamp(30px, 3.1vw, 60px) auto clamp(60px, 5.2vw, 100px);
+  margin: clamp(30px, 3.1vw, 60px) auto clamp(30px, 3.1vw, 60px);
   box-sizing: border-box;
 }
 
@@ -1161,6 +1166,302 @@ body {
 }
 
 /* ===== Mentor ===== */
+.mentor-heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.mentor-heading h5 {
+  color: #a0a0a0;
+  margin: 0 0 8px 0;
+  font-weight: 500;
+}
+
+.mentor-heading h6 {
+  color: white;
+  margin: 0;
+  font-weight: 700;
+}
+
+.quote-icon {
+  display: block;
+  font-weight: 900;
+  font-style: italic;
+  color: #ffffff;
+}
+
+.mentor-info p {
+  color: #b0b0b0;
+}
+
+.mentor-profile h5 {
+  font-weight: 700;
+  color: white;
+  margin: 0 0 5px 0;
+}
+
+.mentor-profile h6 {
+  font-weight: 400;
+  color: #b0b0b0;
+  margin: 0;
+}
+
+.dot {
+  border-radius: 50%;
+  background-color: #555555;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #15cca3;
+}
+
+.buttons-right button {
+  border-radius: 8px;
+  border: 1px solid #15cca3;
+  background-color: transparent;
+  color: #15cca3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.buttons-right button:hover {
+  background-color: #15cca3;
+  color: white;
+}
+
+.mentor-desktop {
+  width: calc(100% - 20px);
+  max-width: clamp(820px, 75vw, 1440px);
+  margin: 0 auto clamp(30px, 2.6vw, 50px);
+  color: #ffffff;
+  font-size: clamp(20px, 1.46vw, 28px);
+
+}
+
+.mentor-desktop .mentor-heading {
+  margin-bottom: clamp(40px, 3.4vw, 65px);
+}
+
+.mentor-desktop .mentor-heading h5 {
+  font-size: clamp(18px, 1.25vw, 24px);
+  font-weight: 400;
+  line-height: 1.2;
+  color: #ffffff;
+  margin: 0;
+}
+
+.mentor-desktop .mentor-heading h6 {
+  font-size: clamp(18px, 1.25vw, 24px);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #ffffff;
+  margin: 2px 0 0;
+}
+
+.mentor-desktop .mentor-card {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(40px, 4.32vw, 83px);
+  min-height: clamp(560px, 38.96vw, 748px);
+  background-color: #090c0f;
+  border-radius: 10px;
+  padding: clamp(60px, 6.46vw, 124px) clamp(40px, 5.47vw, 105px) clamp(100px, 6.46vw, 124px);
+  position: relative;
+  box-sizing: border-box;
+}
+
+.mentor-desktop .mentor-image {
+  width: clamp(280px, 26vw, 500px);
+  aspect-ratio: 1 / 1;
+  height: auto;
+  background-color: #1f2124;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.mentor-desktop .mentor-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.mentor-desktop .quote-icon {
+  font-family: Georgia, serif;
+  font-size: clamp(20px, 1.46vw, 28px);
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1;
+  color: #d9d9d9;
+  margin: 0 0 clamp(20px, 2.1vw, 40px);
+}
+
+.mentor-desktop .mentor-info p {
+  font-size: clamp(14px, 0.94vw, 18px);
+  line-height: 1.89;
+  color: #c4c4c4;
+  margin: 0 0 clamp(24px, 2.1vw, 40px) 0;
+  white-space: pre-line;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 8;
+  overflow: hidden;
+}
+
+.mentor-desktop .slick-track {
+  display: flex;
+}
+
+.mentor-desktop .slick-slide {
+  height: auto;
+}
+
+.mentor-desktop .slick-slide > div,
+.mentor-desktop .slick-slide > div > div {
+  height: 100%;
+}
+
+.mentor-desktop .mentor-card {
+  height: 100%;
+}
+
+.mentor-desktop .mentor-profile h5 {
+  font-size: clamp(20px, 1.46vw, 28px);
+  font-weight: 600;
+  color: #a8a8a8;
+  margin: 0 0 clamp(8px, 0.83vw, 16px);
+}
+
+.mentor-desktop .mentor-profile h6 {
+  font-size: clamp(17px, 1.35vw, 26px);
+  font-weight: 400;
+  color: #a8a8a8;
+  margin: 0;
+}
+
+.mentor-desktop .dots-center {
+  position: absolute;
+  bottom: clamp(24px, 1.72vw, 33px);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: clamp(10px, 0.83vw, 16px);
+}
+
+.mentor-desktop .dot {
+  width: clamp(8px, 0.63vw, 12px);
+  height: clamp(8px, 0.63vw, 12px);
+  background-color: #c4c4c4;
+}
+
+.mentor-desktop .dot.active {
+  background-color: #15cca3;
+}
+
+.mentor-desktop .buttons-right {
+  position: absolute;
+  bottom: clamp(40px, 3.39vw, 65px);
+  right: clamp(30px, 3.33vw, 64px);
+  display: flex;
+  gap: clamp(10px, 0.83vw, 16px);
+}
+
+.mentor-desktop .buttons-right button {
+  width: clamp(36px, 2.5vw, 48px);
+  height: clamp(36px, 2.5vw, 48px);
+  font-size: clamp(14px, 0.94vw, 18px);
+  border-radius: clamp(8px, 0.52vw, 10px);
+  border: 2px solid #d9d9d9;
+  background-color: transparent;
+  color: #d9d9d9;
+}
+
+.mentor-desktop .buttons-right button:hover,
+.mentor-desktop .buttons-right button:active,
+.mentor-desktop .buttons-right button:focus {
+  border-color: #15cca3;
+  background-color: #15cca3;
+  color: #ffffff;
+}
+
+.mentor-mobile {
+  width: calc(100% - 24px);
+  max-width: 500px;
+  margin: 40px auto;
+  color: white;
+}
+
+.mentor-mobile .mentor-heading h5 {
+  font-size: clamp(12px, 3vw, 14px);
+}
+
+.mentor-mobile .mentor-heading h6 {
+  font-size: clamp(18px, 4vw, 22px);
+}
+
+.mentor-mobile .mentor-card {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  background-color: #0b0d10;
+  border-radius: 12px;
+  padding: 24px 20px 70px 20px;
+  position: relative;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+.mentor-mobile .mentor-image {
+  width: 90px;
+  height: 90px;
+  background-color: #2a2d34;
+  border-radius: 8px;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.mentor-mobile .mentor-info {
+  flex: 1;
+}
+
+.mentor-mobile .quote-icon {
+  font-size: clamp(16px, 4vw, 20px);
+  margin-bottom: 8px;
+}
+
+.mentor-mobile .mentor-info p {
+  font-size: clamp(12px, 2.8vw, 14px);
+  line-height: 1.5;
+  margin: 0 0 15px 0;
+  color: #b0b0b0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  overflow: hidden;
+}
+
+.mentor-mobile .mentor-profile h5 {
+  font-size: clamp(14px, 3vw, 16px);
+  font-weight: 700;
+  color: white;
+  margin: 0 0 4px 0;
+}
+
+.mentor-mobile .mentor-profile h6 {
+  font-size: clamp(11px, 2.5vw, 13px);
+  font-weight: 400;
+  color: #b0b0b0;
+  margin: 0;
+}
+
+.mentor-card-stage {
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
 
 /* ===== Partner ===== */
 .partner {

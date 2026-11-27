@@ -1,5 +1,6 @@
-import uni from "../../picture/uni.jpg";
 import { useState } from "react";
+
+const API_BASE_URL = "https://ai-project-api.moviehub.io.vn";
 
 function CourseMobile({classrooms}) {
     const [openId, setOpenId] = useState([]);
@@ -21,7 +22,7 @@ function CourseMobile({classrooms}) {
 
                 return (
                 <section className="course-mobile" key={lop.id}>
-                    <img className="course-mobile-img" src={uni} alt="uni"/>
+                    <img className="course-mobile-img" src={API_BASE_URL + "/v1/file/download" + lop.course.avatar} alt={lop.course.name}/>
 
                     <div className="course-mobile-content">
                         <h2>{lop.course.name} </h2>

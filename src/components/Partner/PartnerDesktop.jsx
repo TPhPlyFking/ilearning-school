@@ -1,18 +1,6 @@
-import fpt from "../../picture/fpt.png";
-import pharmacity from "../../picture/pharmacity.png";
-import kaas from "../../picture/kaas.png";
-import tma from "../../picture/tma.png";
-import sendo from "../../picture/sendo.png";
+const API_BASE_URL = "https://ai-project-api.moviehub.io.vn";
 
-function PartnerDesktop() {
-    const logos= [
-        { image: fpt, name: "FPT" },
-        { image: pharmacity, name: "Pharmacity" },
-        { image: kaas, name: "KAAS" },
-        { image: tma, name: "TMA" },
-        { image: sendo, name: "Sendo" }
-    ];
-
+function PartnerDesktop({companies = []}) {
     return (
         <section className="partner">
             <div className="partner-intro">
@@ -22,20 +10,20 @@ function PartnerDesktop() {
 
             <div className="partner-logo">
                 <div className="partner-track">
-                    {logos.map((logo) => (
+                    {companies.map((company) => (
                         <img
-                            key={logo.name}
-                            src={logo.image}
-                            alt={logo.name}
+                            key={company.id}
+                            src={API_BASE_URL + "/v1/file/download" + company.avatar}
+                            alt={company.name}
                         />
                     ))}
                 </div>
 
                 <div className="partner-track" aria-hidden="true">
-                    {logos.map((logo) => (
+                    {companies.map((company) => (
                         <img
-                            key={logo.name}
-                            src={logo.image}
+                            key={company.id}
+                            src={API_BASE_URL + "/v1/file/download" + company.avatar}
                             alt=""
                         />
                     ))}

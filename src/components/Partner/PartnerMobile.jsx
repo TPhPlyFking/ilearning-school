@@ -1,19 +1,8 @@
 import { Swiper } from "antd-mobile";
-import fpt from "../../picture/fpt.png";
-import pharmacity from "../../picture/pharmacity.png";
-import kaas from "../../picture/kaas.png";
-import tma from "../../picture/tma.png";
-import sendo from "../../picture/sendo.png";
 
-function PartnerMobile() {
-    const logos = [
-        { image: fpt, name: "FPT" },
-        { image: pharmacity, name: "Pharmacity" },
-        { image: kaas, name: "KAAS" },
-        { image: tma, name: "TMA" },
-        { image: sendo, name: "Sendo" }
-    ];
+const API_BASE_URL = "https://ai-project-api.moviehub.io.vn";
 
+function PartnerMobile({companies = []}) {
     return (
         <section className="partner-mobile" style={{
             width: 'calc(100% - 20px)',
@@ -48,12 +37,12 @@ function PartnerMobile() {
 
                     indicator={() => null}
                 >
-                    {logos.map((logo) => (
-                        <Swiper.Item key={logo.name}>
+                    {companies.map((company) => (
+                        <Swiper.Item key={company.id}>
                             <div style={{ display: 'flex', justifyContent: 'center', padding: '0 10px' }}>
                                 <img
-                                    src={logo.image}
-                                    alt={logo.name}
+                                    src={API_BASE_URL + "/v1/file/download" + company.avatar}
+                                    alt={company.name}
                                     style={{ height: '35px', objectFit: 'contain', maxWidth: '100%' }}
                                 />
                             </div>

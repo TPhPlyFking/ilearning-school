@@ -7,6 +7,7 @@ import Reality from "./components/Reality/Reality.jsx"
 import Course from "./components/Course/Course.jsx"
 import Partner from "./components/Partner/Partner.jsx"
 import Review from "./components/Review/Review.jsx";
+import Mentor from "./components/Mentor/Mentor.jsx"
 
 function App() {
   const config = usePageConfig();
@@ -19,6 +20,7 @@ function App() {
       <Reality />
       <Course />
       <Review />
+      <Mentor />
       <Partner />
     </>
   );

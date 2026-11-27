@@ -6,7 +6,7 @@ function ReviewDesktop({reviews = []}) {
         if (avatarPath.startsWith("http")) {
             return avatarPath;
         }
-        return `${API_BASE_URL}${avatarPath}`;
+        return `${API_BASE_URL}/v1/file/download${avatarPath}`;
     };
     return (
         <section className="review-section">

@@ -11,7 +11,7 @@ export default function useReviews () {
                 size: 3,
             });
             if (data === null) return;
-            setReviews(data.content);
+            setReviews(data.content ?? []);
         }
         loadData().catch(console.error);
     }, []);
