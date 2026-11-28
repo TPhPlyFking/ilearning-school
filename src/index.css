@@ -379,7 +379,7 @@ body {
   width: 100%;
   max-width: 45vw;
   margin: 0;
-  font-size: clamp(24px, 2.92vw, 56px);
+  font-size: clamp(24px, 2.92vw, 50px);
   line-height: 1.21;
   font-weight: 500;
   letter-spacing: -0.03em;
