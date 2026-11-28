@@ -1629,10 +1629,28 @@ body {
   background-color: #1e2227;
   color: #ffffff;
   padding: 0;
-  font-size: clamp(10px, 0.8vw, 15px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   line-height: 1;
   cursor: pointer;
   transition: background-color 0.3s;
+}
+
+/* mũi tên vẽ bằng SVG: 1 vạch ngang + đầu mũi tên, nét đậm giống Figma */
+.partner-arrow svg {
+  width: clamp(14px, 1.25vw, 24px);
+  height: clamp(14px, 1.25vw, 24px);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* nút trái: lật mũi tên sang hướng ngược lại */
+.partner-arrow.prev svg {
+  transform: scaleX(-1);
 }
 
 /* mặc định xám tối, đưa chuột vào hoặc đang bấm mới hiện xanh */

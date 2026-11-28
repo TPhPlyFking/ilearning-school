@@ -65,7 +65,7 @@ function PartnerDesktop({companies = []}) {
             </div>
 
             <div className="partner-logo">
-                <button className="partner-arrow" onClick={() => scroll(-1)}>←</button>
+                <button className="partner-arrow prev" onClick={() => scroll(-1)}><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7" /></svg></button>
 
                 <div
                     className="partner-list"
@@ -83,7 +83,7 @@ function PartnerDesktop({companies = []}) {
                     ))}
                 </div>
 
-                <button className="partner-arrow" onClick={() => scroll(1)}>→</button>
+                <button className="partner-arrow" onClick={() => scroll(1)}><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7" /></svg></button>
             </div>
         </section>
     );
