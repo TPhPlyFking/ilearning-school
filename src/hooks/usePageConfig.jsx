@@ -8,7 +8,7 @@ function loadConfig() {
         request = fetchApiData("/v1/setting/public").then((data) => {
             if (data === null) return null;
             const item = data.find((d) => d.keyName === "page_config");
-            return item ? JSON.parse(item.valueData) : null; // biến chuỗi thành object
+            return item ? JSON.parse(item.valueData) : null;
         });
     }
     return request;
