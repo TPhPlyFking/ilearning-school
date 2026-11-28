@@ -62,9 +62,9 @@ function MentorDesktop({ mentors = [], currentMentor, setCurrentMentor }) {
                                     ></div>
 
                                     <div className="mentor-info">
-                                        <span className="quote-icon">//</span>
+                                        <span className="quote-icon">"</span>
                                         <p style={{ whiteSpace: "pre-line" }}>
-                                            {item.description || "Chưa có mô tả."}
+                                            {item.description ? item.description.replaceAll("\n", "\n\n") : "Chưa có mô tả."}
                                         </p>
 
                                         <div className="mentor-profile">
@@ -85,8 +85,8 @@ function MentorDesktop({ mentors = [], currentMentor, setCurrentMentor }) {
                                     </div>
 
                                     <div className="buttons-right">
-                                        <button onClick={handlePrev}>&lt;</button>
-                                        <button onClick={handleNext}>&gt;</button>
+                                        <button className="prev" onClick={handlePrev}></button>
+                                        <button className="next" onClick={handleNext}></button>
                                     </div>
                                 </div>
                             </div>

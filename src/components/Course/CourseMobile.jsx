@@ -58,14 +58,13 @@ function CourseMobile({classrooms}) {
                                             <div className="stage-head">
                                                 <p>{stage.name}</p>
                                                 <span className="stage-time">{stage.timeline} buổi</span>
-                                                <button className="stage-btn" onClick={() => {
+                                                <button className={"stage-btn" + (openStageId.includes(stage.id) ? " open" : "")} onClick={() => {
                                                     if (openStageId.includes(stage.id)) {
                                                         setOpenStageId(openStageId.filter((id) => id !== stage.id));
                                                     } else {
                                                         setOpenStageId([...openStageId, stage.id]);
                                                     }
                                                 }}>
-                                                    {openStageId.includes(stage.id) ? "−" : "+"}
                                                 </button>
                                             </div>
                                             <div className={"stage-body" + (openStageId.includes(stage.id) ? " open" : "")}>
@@ -77,6 +76,7 @@ function CourseMobile({classrooms}) {
                                             </div>
                                         </div>
                                     ))}
+                                <button className="register-btn">Đăng ký ngay</button>
                                 </div>
                             </div>
                         </div>

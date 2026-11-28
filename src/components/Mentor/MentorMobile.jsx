@@ -45,9 +45,9 @@ function MentorMobile({ mentors = [], currentMentor, setCurrentMentor }) {
                                 ></div>
 
                                 <div className="mentor-info">
-                                    <span className="quote-icon">//</span>
+                                    <span className="quote-icon">"</span>
                                     <p style={{ whiteSpace: "pre-line" }}>
-                                        {item.description || "Chưa có mô tả."}
+                                        {item.description ? item.description.replaceAll("\n", "\n\n") : "Chưa có mô tả."}
                                     </p>
 
                                     <div className="mentor-profile">

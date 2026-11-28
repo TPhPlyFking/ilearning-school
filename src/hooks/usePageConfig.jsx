@@ -1,19 +1,24 @@
 import {fetchApiData} from "../api/apiHelper.jsx";
 import {useEffect, useState} from 'react';
 
+let request = null; // nhớ lần gọi đầu tiên, dùng chung cho mọi component
+
+function loadConfig() {
+    if (!request) {
+        request = fetchApiData("/v1/setting/public").then((data) => {
+            if (data === null) return null;
+            const item = data.find((d) => d.keyName === "page_config");
+            return item ? JSON.parse(item.valueData) : null; // biến chuỗi thành object
+        });
+    }
+    return request;
+}
+
 export default function usePageConfig () {
     const [config, setConfig] = useState(null);
 
     useEffect(() => {
-        async function loadData() {
-            const data = await fetchApiData("/v1/setting/public");
-            if(data === null) return;
-            const item = data.find((d) => d.keyName === "page_config");
-            if (item) {
-                setConfig(JSON.parse(item.valueData)); // biến chuỗi thành object
-            }
-        }
-        loadData().catch(console.error);
+        loadConfig().then(setConfig).catch(console.error);
     }, []);
     return config;
 }

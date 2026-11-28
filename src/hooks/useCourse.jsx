@@ -8,7 +8,7 @@ export default function useCourse(){
         async function loadData() {
             const data = await fetchApiData("/v1/class-room/public/list",{
                 page: 0,
-                size: 10,
+                size: 19,
             });
             if (data === null) return;
 
